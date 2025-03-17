@@ -1,0 +1,224 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": [
+        {
+            "command": {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+shift+c"
+        },
+        {
+            "command": "paste",
+            "id": "User.paste",
+            "keys": "ctrl+shift+v"
+        },
+        {
+            "command": {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        },
+        {
+            "command": "find",
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": true,
+    "defaultProfile": "{96cba0a6-05df-49c9-974a-a718d7b9976f}",
+    "newTabMenu": [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": {
+        "defaults": {},
+        "list": [
+            {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "\u547d\u4ee4\u63d0\u793a\u5b57\u5143"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "antialiasingMode": "cleartype",
+                "autoMarkPrompts": false,
+                "bellStyle": [
+                    "audible",
+                    "window",
+                    "taskbar"
+                ],
+                "colorScheme": "MyTheme",
+                "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "cursorShape": "filledBox",
+                "elevate": false,
+                "experimental.retroTerminalEffect": false,
+                "experimental.rightClickContextMenu": true,
+                "font": {
+                    "cellHeight": "1.618",
+                    "face": "'JetBrainsMono Nerd Font'",
+                    "size": 9
+                },
+                "guid": "{96cba0a6-05df-49c9-974a-a718d7b9976f}",
+                "hidden": false,
+                "historySize": 5000,
+                "intenseTextStyle": "all",
+                "name": "WindowsTerminal",
+                "opacity": 95,
+                "padding": "12",
+                "showMarksOnScrollbar": true,
+                "startingDirectory": "%USERPROFILE%",
+                "useAcrylic": false
+            },
+            {
+                "antialiasingMode": "cleartype",
+                "autoMarkPrompts": false,
+                "bellStyle": [
+                    "audible",
+                    "window",
+                    "taskbar"
+                ],
+                "colorScheme": "MyTheme",
+                "cursorShape": "filledBox",
+                "elevate": false,
+                "experimental.retroTerminalEffect": false,
+                "experimental.rightClickContextMenu": true,
+                "font": {
+                    "cellHeight": "1.618",
+                    "face": "'JetBrainsMono Nerd Font'",
+                    "size": 9
+                },
+                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+                "hidden": false,
+                "name": "Git Bash",
+                "source": "Git",
+                "opacity": 95,
+                "padding": "12",
+            },
+            {
+                "font": {
+                    "cellHeight": "1.618",
+                    "face": "'JetBrainsMono Nerd Font'",
+                    "size": 8
+                },
+                "guid": "{4ff56d04-d9cf-57ea-bae2-ad396374e7e3}",
+                "hidden": false,
+                "name": "Ubuntu 22.04.5 LTS",
+                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
+            },
+            {
+                "font": {
+                    "cellHeight": "1.618",
+                    "face": "'JetBrainsMono Nerd Font'",
+                    "size": 8
+                },
+                "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
+                "hidden": false,
+                "name": "Ubuntu-22.04",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "font": {
+                    "cellHeight": "1.618",
+                    "face": "'JetBrainsMono Nerd Font'",
+                    "size": 8
+                },
+                "guid": "{2b372ca1-1ee2-403d-a839-6d63077ad871}",
+                "hidden": false,
+                "icon": "https://www.nushell.sh/icon.png",
+                "name": "Nu Shell",
+                "commandline": "nu.exe",
+                "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "font": {
+                    "cellHeight": "1.618",
+                    "face": "'JetBrainsMono Nerd Font'",
+                    "size": 8
+                },
+                "commandline": "C:\\msys64\\msys2_shell.cmd -msys -defterm -no-start",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6301}",
+                "hidden": false,
+                "name": "MSYS2",
+                "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "font": {
+                    "cellHeight": "1.618",
+                    "face": "'JetBrainsMono Nerd Font'",
+                    "size": 8
+                },
+                "name": "Cygwin",
+                "commandline": "C:\\cygwin64\\bin\\bash --login -i",
+                "icon": "C:\\cygwin64\\Cygwin.ico",
+                "startingDirectory": "C:\\cygwin64\\bin"
+            }
+        ]
+    },
+    "schemes": [
+        {
+            "name": "MyTheme",
+            "cursorColor": "#F5E0DC",
+            "selectionBackground": "#585B70",
+            "background": "#11111B",
+            "foreground": "#CDD6F4",
+            "black": "#45475A",
+            "red": "#F38BA8",
+            "green": "#A6E3A1",
+            "yellow": "#F9E2AF",
+            "blue": "#89B4FA",
+            "purple": "#F5C2E7",
+            "cyan": "#94E2D5",
+            "white": "#BAC2DE",
+            "brightBlack": "#585B70",
+            "brightRed": "#F38BA8",
+            "brightGreen": "#A6E3A1",
+            "brightYellow": "#F9E2AF",
+            "brightBlue": "#89B4FA",
+            "brightPurple": "#F5C2E7",
+            "brightCyan": "#94E2D5",
+            "brightWhite": "#A6ADC8"
+        }
+    ],
+    "themes": [
+        {
+            "name": "MyTheme",
+            "tab": {
+                "background": "#1E1E2EFF",
+                "iconStyle": "monochrome",
+                "showCloseButton": "always",
+                "unfocusedBackground": null
+            },
+            "tabRow": {
+                "background": "#181825FF",
+                "unfocusedBackground": "#11111BFF"
+            },
+            "window": {
+                "applicationTheme": "dark",
+                "experimental.rainbowFrame": true,
+                "frame": "terminalBackground",
+                "unfocusedFrame": "terminalBackground",
+                "useMica": true
+            }
+        }
+    ]
+}
