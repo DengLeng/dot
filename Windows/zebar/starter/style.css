@@ -1,0 +1,334 @@
+@import 'https://www.nerdfonts.com/assets/css/webfont.css';
+
+i {
+  background: #000000;
+  color: #ffffff;
+  font-size: 11px;
+}
+
+body {
+  background: #000000;
+  color: #ffffff;
+  font-family: 'Segoe UI', 'JetBrainsMono Nerd Font', ui-monospace, monospace;
+  font-size: 11px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  background: #000000;
+  color: #ffffff;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  height: 100%;
+  padding: 0px;
+}
+
+.left,
+.center,
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.center {
+  justify-self: center;
+}
+
+.right {
+  justify-self: end;
+}
+
+/* LEFT */
+.logo {
+  border: 2px solid #222222;
+  border-radius: 4px;
+  background: #000000;
+  color: #3178c6;
+  font-size: 15px;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding: 4px;
+}
+
+.workspaces {
+  display: flex;
+  align-items: center;
+}
+
+.workspace {
+  border: 2px solid #222222;
+  border-radius: 4px;
+  background: #000000;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 11px;
+  padding: 4px 8px;
+  margin: 2px;
+
+  &.displayed {
+    border: 2px solid #222222;
+    border-radius: 4px;
+    background: #000000;
+    color: #ffffff;
+    padding: 4px 8px;
+  }
+
+  &.focused {
+    border: 2px solid #222222;
+    border-radius: 4px;
+    background: #000000;
+    color: #3178c6;
+    font-weight: 900;
+    padding: 4px 8px;
+  }
+}
+
+.title {
+  background: #000000;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60%;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+/* RIGHT */
+.paused-button {
+  border: 2px solid #3178c6;
+  border-radius: 4px;
+  background: #000000;
+  color: #3178c6;
+  font-weight: 600;
+  padding: 4px 8px 4px 8px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.paused-button i {
+  margin-right: 4px;
+  color: #3178c6;
+}
+
+.binding-mode {
+  border: 2px solid #3178c6;
+  border-radius: 4px;
+  background: #000000;
+  color: #3178c6;
+  font-weight: 600;
+  padding: 4px 8px 4px 8px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.binding-mode i {
+  margin-right: 4px;
+  color: #3178c6;
+}
+
+.tiling-direction {
+  border: 2px solid #222222;
+  border-radius: 4px;
+  background: #000000;
+  color: #3178c6;
+  cursor: pointer;
+  line-height: 1;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 8px 4px 8px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.cpu {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+  margin-right: 4px;
+  border: 2px solid #222222;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.cpu .text {
+  background: #000000;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.cpu i {
+  margin-right: 4px;
+  color: #ffffff;
+}
+
+.cpu i.high {
+  color: #d43359;
+}
+
+.cpu i.medium {
+  color: #f7df1e;
+}
+
+.cpu i.low {
+  color: #66A182;
+}
+
+.memory {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+  margin-right: 4px;
+  border: 2px solid #222222;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.memory .text {
+  background: #000000;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.memory i {
+  margin-right: 4px;
+  color: #ffffff;
+}
+
+.memory i.high {
+  color: #d43359;
+}
+
+.memory i.medium {
+  color: #f7df1e;
+}
+
+.memory i.low {
+  color: #66a182;
+}
+
+.audio {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+  margin-right: 4px;
+  border: 2px solid #222222;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.audio .text {
+  background: #000000;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.audio i {
+  margin-right: 4px;
+  color: #ffffff;
+}
+
+.audio i.high {
+  color: #d43359;
+}
+
+.audio i.medium {
+  color: #f7df1e;
+}
+
+.audio i.low {
+  color: #66a182;
+}
+
+.battery {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+  margin-right: 4px;
+  border: 2px solid #222222;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.battery .text {
+  background: #000000;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.battery i {
+  margin-right: 4px;
+  color: #d43359;
+}
+
+.battery i.high {
+  color: #66a182;
+}
+
+.battery i.medium {
+  color: #f7df1e;
+}
+
+.battery i.low {
+  color: #d43359;
+}
+
+.network_down {
+  background: #000000;
+  color: #ffffff;
+  margin-left: 4px;
+  margin-right: 4px;
+  border: 2px solid #222222;
+  border-radius: 4px;
+  padding: 4px;
+  white-space: nowrap;
+}
+
+.network_down i {
+  background: #000000;
+  color: #CCE6F4;
+  margin-right: 8px;
+}
+
+.network_up {
+  background: #000000;
+  color: #ffffff;
+  margin-left: 4px;
+  margin-right: 4px;
+  border: 2px solid #222222;
+  border-radius: 4px;
+  padding: 4px;
+  white-space: nowrap;
+}
+
+.network_up i {
+  background: #000000;
+  color: #3178C6;
+  margin-right: 8px;
+}
+
+.date {
+  background: #000000;
+  color: #ffffff;
+  margin-left: 4px;
+  margin-right: 4px;
+  border: 2px solid #222222;
+  border-radius: 4px;
+  padding: 4px;
+  white-space: nowrap;
+}
+
+.date i {
+  background: #000000;
+  color: #ffffff;
+  margin-right: 4px;
+}
