@@ -1,9 +1,8 @@
-# Steps:
+# Installation:
 # 1. sh <(curl -L https://nixos.org/nix/install)
-# 2. mkdir ~/.config/
-# 3. cp nix-darwin ~/.config
-# 4. nix run nix-darwin/master#darwin-rebuild --extra-experimental-features 'nix-command flakes' -- switch --flake ~/.config/nix-darwin#cya
-# 5. darwin-rebuild switch --flake ~/.config/nix-darwin#cya
+# 2. cp nix-darwin ~/
+# 3. nix run nix-darwin/master#darwin-rebuild --extra-experimental-features 'nix-command flakes' -- switch --flake ~/nix-darwin#cya
+# 4. darwin-rebuild switch --flake ~/nix-darwin#cya
 # References:
 # 1. https://github.com/ryan4yin/nix-darwin-kickstarter
 # 2. https://nixos-and-flakes.thiscute.world/
@@ -169,7 +168,7 @@
               ls = "lsd";
               nv = "nvim";
               em = "emacs -nw";
-              switch = "darwin-rebuild switch --flake ~/.config/nix-darwin#cya";
+              switch = "darwin-rebuild switch --flake ~/nix-darwin#cya";
             };
           };
         };
