@@ -165,7 +165,10 @@
             enable = true;
             enableCompletion = true;
             shellAliases = {
+              gd = "git clone --depth=1 https://github.com/DengLeng/dot.git";
+              ff = "fastfetch";
               ls = "lsd";
+              tree = "lsd --tree -al";
               nv = "nvim";
               em = "emacs -nw";
               switch = "darwin-rebuild switch --flake ~/nix-darwin#cya";
