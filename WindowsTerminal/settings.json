@@ -83,7 +83,7 @@
                 "historySize": 5000,
                 "intenseTextStyle": "all",
                 "name": "WindowsTerminal",
-                "opacity": 95,
+                "opacity": 98,
                 "padding": "12",
                 "showMarksOnScrollbar": true,
                 "startingDirectory": "%USERPROFILE%",
@@ -179,38 +179,38 @@
             "name": "MyTheme",
             "cursorColor": "#F5E0DC",
             "selectionBackground": "#585B70",
-            "background": "#11111B",
-            "foreground": "#CDD6F4",
-            "black": "#45475A",
-            "red": "#F38BA8",
-            "green": "#A6E3A1",
-            "yellow": "#F9E2AF",
-            "blue": "#89B4FA",
-            "purple": "#F5C2E7",
-            "cyan": "#94E2D5",
-            "white": "#BAC2DE",
-            "brightBlack": "#585B70",
-            "brightRed": "#F38BA8",
-            "brightGreen": "#A6E3A1",
-            "brightYellow": "#F9E2AF",
-            "brightBlue": "#89B4FA",
-            "brightPurple": "#F5C2E7",
-            "brightCyan": "#94E2D5",
-            "brightWhite": "#A6ADC8"
+            "background": "#24283b",
+            "foreground": "#c0caf5",
+            "black": "#1f2335",
+            "red": "#f7768e",
+            "green": "#9ece6a",
+            "yellow": "#ff9e64",
+            "blue": "#7aa2f7",
+            "purple": "#bb9af7",
+            "cyan": "#7dcfff",
+            "white": "#c0caf5",
+            "brightBlack": "#1f2335",
+            "brightRed": "#f7768e",
+            "brightGreen": "#9ece9a",
+            "brightYellow": "#ff9e64",
+            "brightBlue": "#7aa2f7",
+            "brightPurple": "#bb9af7",
+            "brightCyan": "#7dcfff",
+            "brightWhite": "#c0caf5"
         }
     ],
     "themes": [
         {
             "name": "MyTheme",
             "tab": {
-                "background": "#1E1E2EFF",
+                "background": "#1f2335",
                 "iconStyle": "monochrome",
                 "showCloseButton": "always",
                 "unfocusedBackground": null
             },
             "tabRow": {
-                "background": "#181825FF",
-                "unfocusedBackground": "#11111BFF"
+                "background": "#1f2335",
+                "unfocusedBackground": "#1f2335"
             },
             "window": {
                 "applicationTheme": "dark",
