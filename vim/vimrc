@@ -1,0 +1,418 @@
+" VIMRC ENCODING:
+scriptencoding utf-8
+
+" REFERENCE:
+" https://github.com/junegunn/vim-plug/wiki/tips
+" https://github.com/skywind3000/vim-init
+" https://github.com/wklken/k-vim
+" https://github.com/amix/vimrc
+" https://gitee.com/mirrorvim/vim-fast/blob/master/vimrc-no-plug
+" https://github.com/chenxuan520/vim-fast
+" https://github.com/spf13/spf13-vim
+" https://github.com/hanleylee/dotvim
+" https://github.com/wsdjeg/SpaceVim
+" https://github.com/liuchengxu/space-vim
+
+" GUI:
+if has('gui-running')
+  if has('unix')
+    set guifont=JetBrainsMono\ Nerd\ Font:h12
+  elseif has('win32') || has('win64')
+    set guifont=Consolas:h10
+  elseif has('mac')
+    set guifont=Menlo:h12
+  endif
+  set guioptions-=T
+  set guioptions-=m
+  set guioptions-=r
+  set listchars=tab:▸\ ,space:·
+endif
+
+" OPTIONS:
+filetype on
+filetype plugin on
+filetype indent on
+syntax enable
+syntax on
+set autoread
+set backspace=indent,eol,start
+set ruler
+set number
+set relativenumber
+set cursorline
+set cursorcolumn
+set colorcolumn=80
+set splitbelow
+set splitright
+set clipboard^=unnamed,unnamedplus
+set nowrap
+set showtabline=2
+set laststatus=2
+set wildmenu
+set wildoptions=pum
+set autoindent
+set cindent
+set smartindent
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set smarttab
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set nobackup
+set noswapfile
+set notermguicolors
+set background=dark
+set timeoutlen=200
+set pumheight=12
+set pumwidth=20
+
+" KEYBINDINGS:
+let mapleader = ' '
+let maplocalleader = ','
+nnoremap <leader>CE :edit $MYVIMRC<cr>
+nnoremap <leader>CR :source $MYVIMRC<cr>
+inoremap jk <esc>
+vnoremap jk <esc>
+cnoremap jk <C-c>
+inoremap <C-a> <home>
+vnoremap <C-a> <home>
+cnoremap <C-a> <home>
+inoremap <C-e> <end>
+vnoremap <C-e> <end>
+cnoremap <C-e> <end>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <leader>bn :bn<cr>
+nnoremap <leader>bp :bp<cr>
+nnoremap <leader>bd :bd<cr>
+
+" BUILTIN PLUGINS:
+let g:loaded_getscriptPlugin = 1
+let g:loaded_gzip = 1
+let g:loaded_logiPat = 1
+let g:loaded_manpager = 1
+let g:loaded_matchit = 1
+let g:loaded_matchparen = 1
+let g:loaded_netrwPlugin = 1
+let g:loaded_rrhelper =1
+let g:loaded_spellfile = 1
+let g:loaded_tarPlugin = 1
+let g:loaded_tohtml = 1
+let g:loaded_vimballPlugin = 1
+let g:loaded_zipPlugin = 1
+
+" AUTOCMD:
+augroup GoToLastPosition
+  autocmd!
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line('$')
+        \| exe "normal! g'\""
+        \| endif
+        \| autocmd! GoToLastPosition
+augroup END
+augroup DisableSyntaxInLargeFile
+  autocmd!
+  autocmd BufWinEnter * if getfsize(expand('%')) > 1048576
+        \| syntax clear
+        \| endif
+        \| autocmd! DisableSyntaxInLargeFile
+augroup END
+augroup DisableAutoCommentInNextLine
+  autocmd!
+  autocmd BufReadPost * setlocal formatoptions-=r formatoptions-=c formatoptions-=o
+        \| autocmd! DisableAutoCommentInNextLine
+augroup END
+augroup CustomCLangCommentStyle
+  autocmd!
+  autocmd FileType c,cpp setlocal commentstring=//\ %s
+        \| autocmd! CustomCLangCommentStyle
+augroup END
+augroup CustomIndentForSomeFileType
+  autocmd!
+  autocmd FileType python,json,jsonc setlocal shiftwidth=4 tabstop=4 softtabstop=4
+        \| autocmd! CustomIndentForSomeFileType
+augroup END
+augroup CloseWithQ
+  autocmd!
+  autocmd FileType help noremap <Buffer>q :bd<cr>
+        \| autocmd! CloseWithQ
+augroup END
+
+" VIM PLUG:
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  augroup VimPlugAutoInstall
+    autocmd!
+    autocmd BufWinEnter * PlugInstall --sync
+          \| source $MYVIMRC
+          \| autocmd! VimPlugAutoInstall
+  augroup END
+endif
+augroup AutoInstallPlugins
+  autocmd!
+  autocmd BufWinEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)')) > 0
+        \| PlugInstall --sync
+        \| source $MYVIMRC
+        \| endif
+        \| autocmd! AutoInstallPlugins
+augroup END
+nnoremap <leader>P :PlugStatus<cr>
+
+" INSTALL PLUGINS:
+call plug#begin()
+" UI
+Plug 'mhinz/vim-startify', { 'on': [] }
+Plug 'morhetz/gruvbox', { 'on': [] }
+Plug 'vim-airline/vim-airline', { 'on': [] }
+Plug 'machakann/vim-highlightedyank', { 'on': [] }
+" EDITOR
+Plug 'LunarWatcher/auto-pairs', { 'on': [] }
+Plug 'luochen1990/rainbow', { 'on': [] }
+Plug 'tpope/vim-commentary', { 'on': [] }
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+" LINTING
+Plug 'dense-analysis/ale', { 'on': [] }
+" COMPLETION
+Plug 'prabirshrestha/asyncomplete.vim', { 'on': [] }
+Plug 'prabirshrestha/asyncomplete-buffer.vim', { 'on': [] }
+Plug 'prabirshrestha/asyncomplete-file.vim', { 'on': [] }
+Plug 'prabirshrestha/asyncomplete-lsp.vim', { 'on': [] }
+" LSP
+Plug 'prabirshrestha/vim-lsp', { 'on': [] }
+Plug 'mattn/vim-lsp-settings', { 'on': ['LspInstallServer', 'LspManageServers'] }
+" SNIPPET
+Plug 'hrsh7th/vim-vsnip', { 'on': [] }
+Plug 'hrsh7th/vim-vsnip-integ', { 'on': [] }
+" TOOL
+Plug 'thinca/vim-quickrun', { 'on': ['QuickRun'] }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim', { 'on': ['Files', 'Buffers', 'Colors', 'Lines', 'BLines', 'History', 'Commands', 'Rg'] }
+call plug#end()
+
+" UI: VIM-STARTIFY
+augroup LoadVimStartify
+  autocmd!
+  autocmd BufWinEnter * call plug#load('vim-startify')
+        \| autocmd! LoadVimStartify
+        \| let g:startify_bookmarks = ['~/.vim/vimrc']
+        \| let g:startify_session_autoload = 1
+        \| let g:startify_files_number = 15
+        \| let g:startify_update_oldfiles = 10
+        \| let g:startify_padding_left = 5
+        \| let g:startify_custom_header = []
+        \| let g:startify_update_oldfiles = 1
+        \| let g:startify_relative_path = 1
+        \| let g:startify_padding_left = winwidth(0) / 3
+        \| nnoremap <leader>ts :Startify<cr>
+augroup END
+
+" UI: GRUVBOX
+augroup LoadGruvbox
+  autocmd!
+  autocmd BufReadPost,BufWinEnter * call plug#load('gruvbox')
+        \| autocmd! LoadGruvbox
+        \| colorscheme gruvbox
+augroup END
+
+" UI: VIM-AIRLINE
+augroup LoadVimAirline
+  autocmd!
+  autocmd BufReadPost,BufWinEnter * call plug#load('vim-airline')
+        \| autocmd! LoadVimAirline
+        \| let g:airline_extensions = ['tabline', 'branch']
+        \| let g:airline#extensions#tabline#show_buffers = 1
+        \| let g:airline#extensions#tabline#show_splits = 1
+        \| let g:airline#extensions#tabline#show_tabs = 0
+        \| nmap <leader>1 <Plug>AirlineSelectTab1
+        \| nmap <leader>2 <Plug>AirlineSelectTab2
+        \| nmap <leader>3 <Plug>AirlineSelectTab3
+        \| nmap <leader>4 <Plug>AirlineSelectTab4
+        \| nmap <leader>5 <Plug>AirlineSelectTab5
+        \| nmap <leader>6 <Plug>AirlineSelectTab6
+        \| nmap <leader>7 <Plug>AirlineSelectTab7
+        \| nmap <leader>8 <Plug>AirlineSelectTab8
+        \| nmap <leader>9 <Plug>AirlineSelectTab9
+augroup END
+
+" UI: VIM-HIGHLIGHTEDYANK
+augroup LoadVimHighlightYank
+  autocmd!
+  autocmd BufReadPost * call plug#load('vim-highlightedyank')
+        \| autocmd! LoadVimHighlightYank
+        \| let g:highlightedyank_highlight_duration = 1000
+augroup END
+
+" EDITOR: AUTO-PAIRS
+augroup LoadAutoPairs
+  autocmd!
+  autocmd InsertEnter * call plug#load('auto-pairs')
+        \| autocmd! LoadAutoPairs
+        \| call autopairs#AutoPairsTryInit()
+augroup END
+
+" EDITOR: RAINBOW
+augroup LoadRainbow
+  autocmd!
+  autocmd InsertEnter * call plug#load('rainbow')
+        \| autocmd! LoadRainbow
+        \| let g:rainbow_active = 1
+        \| call rainbow_main#toggle()
+augroup END
+
+" EDITOR: VIM-COMMENTARY
+augroup LoadVimCommentary
+  autocmd!
+  autocmd BufReadPost * call plug#load('vim-commentary')
+        \| autocmd! LoadVimCommentary
+augroup END
+
+" EDITOR: VIM-WHICH-KEY
+nnoremap <silent><leader> :<C-u>WhichKey '<Space>'<cr>
+nnoremap <silent><localleader> :<C-u>WhichKey ','<cr>
+let g:which_key_map = {}
+let g:which_key_map['l'] = {
+      \ 'name': '+LSP',
+      \ 'o': [':Vista!!', 'Outline'],
+      \ }
+let g:which_key_map['C'] = {
+      \ 'name': '+Config',
+      \ 'E': [':edit $MYVIMRC', 'Edit'],
+      \ 'R': [':source $MYVIMRC', 'Reload'],
+      \ }
+let g:which_key_map['f'] = {
+      \ 'name': '+Find',
+      \ 'f': [':Files', 'Files'],
+      \ 'F': [':Files ~/', 'Files in ~/'],
+      \ 'b': [':Buffers', 'Buffers'],
+      \ 'c': [':Colors', 'Colorschemes'],
+      \ 'r': [':History', 'Old Files'],
+      \ 's': [':BLines', 'Search in Current Buffer'],
+      \ 'w': [':Rg', 'Words'],
+      \ }
+let g:which_key_map['t'] = {
+      \ 'name': '+Toggle',
+      \ 'r': [':QuickRun', 'Run Code'],
+      \ 's': [':Startify', 'Startify Page'],
+      \ 't': [':StartupTime', 'StartupTime'],
+      \ }
+let g:which_key_map['b'] = {
+      \ 'name': '+Buffer',
+      \ 'n': [':bn', 'Next'],
+      \ 'p': [':bp', 'Prev'],
+      \ 'd': [':bd', 'Delete']
+      \ }
+augroup LoadVimWhichKey
+  autocmd!
+  autocmd User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
+        \| autocmd! LoadVimWhichKey
+augroup END
+
+" LINTING: ALE
+augroup LoadALE
+  autocmd!
+  autocmd InsertEnter * call plug#load('ale')
+        \| autocmd! LoadALE
+augroup END
+
+" COMPLETION: ASYNCOMPLETE.VIM
+" COMPLETION: ASYNCOMPLETE-BUFFER.VIM
+" COMPLETION: ASYNCOMPLETE-FILE.VIM
+" COMPLETION: ASYNCOMPLETE-LSP.VIM
+" LSP: VIM-LSP
+" LSP: VIM-LSP-SETTINGS
+" SNIPPET: VIM-VSNIP
+" SNIPPET: VIM-VSNIP-INTEG
+imap <expr><Tab> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : pumvisible() ? "\<C-n>" : "\<Tab>"
+smap <expr><Tab> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : pumvisible() ? "\<C-n>" : "\<Tab>"
+imap <expr><S-Tab> vsnip#available(1) ? '<Plug>(vsnip-jump-prev)' : pumvisible() ? "\<C-p>" : "\<S-Tab>"
+smap <expr><S-Tab> vsnip#available(1) ? '<Plug>(vsnip-jump-prev)' : pumvisible() ? "\<C-p>" : "\<S-Tab>"
+augroup LoadCompletionLspSnippet
+  autocmd!
+  autocmd InsertEnter * call plug#load('asyncomplete.vim', 'asyncomplete-buffer.vim',
+        \ 'asyncomplete-file.vim', 'asyncomplete-lsp.vim', 'vim-lsp', 'vim-vsnip',
+        \ 'vim-vsnip-integ')
+        \| autocmd! LoadCompletionLspSnippet
+        \| let g:lsp_diagnostics_enabled = 0
+        \| call asyncomplete#enable_for_buffer()
+        \| call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+        \ 'name': 'buffer',
+        \ 'allowlist': ['*'],
+        \ 'blocklist': ['go'],
+        \ 'completor': function('asyncomplete#sources#buffer#completor'),
+        \ 'config': { 'max_buffer_size': 10000 }
+        \ }))
+        \| call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+        \ 'name': 'file',
+        \ 'allowlist': ['*'],
+        \ 'priority': 10,
+        \ 'completor': function('asyncomplete#sources#file#completor')
+        \ }))
+        \| call lsp#enable()
+        \| if executable('clangd')
+        \| call lsp#register_server({
+        \ 'name': 'clangd',
+        \ 'cmd': { server_info -> ['clangd', '-j=12', '--enable-config', '--background-index', '--clang-tidy', '--all-scopes-completion', '--completion-style=detailed', '--header-insertion-decorators', '--limit-references=3000', '--limit-results=350'] },
+        \ 'whitelist': ['c', 'cpp']
+        \ })
+        \| endif
+        \| if executable('pylsp')
+        \| call lsp#register_server({
+        \ 'name': 'pylsp',
+        \ 'cmd': { server_info -> ['pylsp'] },
+        \ 'whitelist': ['python']
+        \ })
+        \| endif
+        \| if executable('typescript-language-server')
+        \| call lsp#register_server({
+        \ 'name': 'typescript-language-server',
+        \ 'cmd': { server_info -> [&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+        \ 'root_uri': { server_info -> lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..')) },
+        \ 'whitelist': ['javascript', 'javascript.jsx', 'javascriptreact', 'typescript', 'typescript.tsx', 'typescriptreact']
+        \ })
+        \| endif
+augroup END
+function! s:on_lsp_buffer_enabled() abort
+  setlocal omnifunc=lsp#complete
+  setlocal signcolumn=yes
+  if exists('+tagfunc')
+    setlocal tagfunc=lsp#tagfunc
+  endif
+  nmap <Buffer> gd <Plug>(lsp-definition)
+  nmap <Buffer> gs <Plug>(lsp-document-symbol-search)
+  nmap <Buffer> gr <Plug>(lsp-references)
+  nmap <Buffer> gi <Plug>(lsp-implementation)
+  nmap <Buffer> K <plug>(lsp-hover)
+  nnoremap <Buffer> <expr><C-f> lsp#scroll(+4)
+  nnoremap <Buffer> <expr><C-b> lsp#scroll(-4)
+  let g:lsp_format_sync_timeout = 1000
+  augroup ExecLspDocumentFormatSync
+    autocmd!
+    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+          \| autocmd! ExecLspDocumentFormatSync
+  augroup END
+endfunction
+augroup LspInstall
+  autocmd!
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+        \| autocmd! LspInstall
+augroup END
+
+" TOOL: QUICKRUN
+nnoremap <leader>tr :QuickRun<cr>
+
+" TOOL: FZF
+" TOOL: FZF.VIM
+let g:fzf_layout={ 'down': '40%' }
+nnoremap <leader>ff :Files<cr>
+nnoremap <leader>fF :Files ~/<cr>
+nnoremap <leader>fb :Buffers<cr>
+nnoremap <leader>fw :Rg<cr>
+nnoremap <leader>fs :BLines<cr>
+nnoremap <leader>fr :History<cr>
+nnoremap <leader>fc :Colors<cr>
+nnoremap <leader><leader> :Commands<cr>
