@@ -33,6 +33,7 @@
         {
           # user $HOME path
           # @see: https://stackoverflow.com/questions/79473295/error-trying-to-setup-basic-nix-darwin-with-home-manager-flake
+          # @see: https://github.com/nix-community/home-manager/issues/6036
           users.users.cya.home = "/Users/cya";
 
           # nixpkgs setup
