@@ -99,7 +99,7 @@
                         onClick={() => output.glazewm.runCommand('wm-toggle-pause')}
                       >
                         <i className="nf nf-fa-pause_circle_o"></i>
-                        pause
+                        PAUSE
                       </button>
                     )
                   }
@@ -109,7 +109,7 @@
                         className="binding-mode"
                         key={bindingMode.name}
                       >
-                        <i className="nf nf-fa-recycle"></i>
+                        <i className="nf nf-md-refresh_circle"></i>
                         {bindingMode.displayName ?? bindingMode.name}
                       </button>
                     ))
@@ -124,7 +124,7 @@
             {
               output.cpu && (
                 <div className="cpu">
-                  <i className={`nf nf-oct-cpu ${output.cpu.usage > 80 ? 'high' : output.cpu.usage > 50 ? 'medium' : output.cpu.usage > 20 ? 'low' : ''}`}></i>
+                  <i className={`nf nf-oct-cpu ${output.cpu.usage > 90 ? 'high' : output.cpu.usage > 60 ? 'medium' : output.cpu.usage > 30 ? 'low' : ''}`}></i>
                   <span className="text">{Math.round(output.cpu.usage)}%</span>
                 </div>
               )
@@ -132,7 +132,7 @@
             {
               output.memory && (
                 <div className="memory">
-                  <i className={`nf nf-oct-stack ${output.memory.usage > 80 ? 'high' : output.memory.usage > 50 ? 'medium' : output.memory.usage > 20 ? 'low' : ''}`}></i>
+                  <i className={`nf nf-oct-stack ${output.memory.usage > 90 ? 'high' : output.memory.usage > 60 ? 'medium' : output.memory.usage > 30 ? 'low' : ''}`}></i>
                   <span className="text">{Math.round(output.memory.usage)}%</span>
                 </div>
               )
@@ -140,7 +140,7 @@
             {
               output.audio && (
                 <div className="audio">
-                  <i className={`nf nf-md-volume_high ${output.audio.defaultPlaybackDevice?.volume > 50 ? 'high' : output.audio.defaultPlaybackDevice?.volume > 30 ? 'medium' : output.audio.defaultPlaybackDevice?.volume > 10 ? 'low' : ''}`}></i>
+                  <i className={`nf nf-md-volume_high ${output.audio.defaultPlaybackDevice?.volume > 50 ? 'high' : output.audio.defaultPlaybackDevice?.volume > 40 ? 'medium' : output.audio.defaultPlaybackDevice?.volume > 30 ? 'low' : ''}`}></i>
                   <span className="text">{Math.round(output.audio.defaultPlaybackDevice?.volume)}%</span>
                 </div>
               )
@@ -148,7 +148,7 @@
             {
               output.battery && (
                 <div className="battery">
-                  <i className={`nf nf-fa-battery_4 ${output.battery.chargePercent > 80 ? 'high' : output.battery.chargePercent > 50 ? 'medium' : output.battery.chargePercent > 20 ? 'low' : ''}`}></i>
+                  <i className={`nf nf-oct-battery ${output.battery.chargePercent > 80 ? 'high' : output.battery.chargePercent > 50 ? 'medium' : output.battery.chargePercent > 20 ? 'low' : ''}`}></i>
                   <span className="text">{Math.round(output.battery.chargePercent)}%</span>
                 </div>
               )
