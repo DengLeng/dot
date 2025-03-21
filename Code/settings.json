@@ -1,0 +1,223 @@
+{
+    // BUILTIN //
+    "accessibility.dimUnfocused.enabled": true,
+    "accessibility.dimUnfocused.opacity": 0.75,
+    "editor.fontSize": 14,
+    "editor.guides.bracketPairs": true,
+    "editor.guides.bracketPairsHorizontal": true,
+    "editor.guides.highlightActiveIndentation": true,
+    "editor.lineNumbers": "relative",
+    "editor.renderWhitespace": "all",
+    "editor.minimap.enabled": false,
+    "editor.tabSize": 2,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.rulers": [
+        80
+    ],
+    "window.zoomLevel": -0.5,
+    "workbench.startupEditor": "none",
+    "workbench.panel.showLabels": false,
+    "terminal.integrated.minimumContrastRatio": 1,
+    "[python]": {
+        "editor.tabSize": 4
+    },
+    "[json]": {
+        "editor.tabSize": 4
+    },
+    "[jsonc]": {
+        "editor.tabSize": 4
+    },
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1,
+    },
+    // Catppuccin //
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "catppuccin.accentColor": "blue",
+    "catppuccin.colorOverrides": {
+        "mocha": {
+            "base": "#11111b",
+            "mantle": "#11111b",
+            "crust": "#000000"
+        }
+    },
+    "catppuccin.customUIColors": {
+        "mocha": {
+            "editorLineNumber.activeForeground": "green",
+            "editorCursor.foreground": "rosewater",
+            "commandCenter.border": "blue",
+            "widget.border": "blue",
+        }
+    },
+    "catppuccin.italicComments": true,
+    "catppuccin.italicKeywords": true,
+    "catppuccin.boldKeywords": true,
+    "catppuccin.workbenchMode": "minimal",
+    "catppuccin.bracketMode": "dimmed",
+    "catppuccin.extraBordersEnabled": true,
+    "catppuccin.syncWithIconPack": true,
+    // Catppuccin Icons //
+    "workbench.iconTheme": "catppuccin-mocha",
+    "catppuccin-icons.hidesExplorerArrows": false,
+    "catppuccin-icons.specificFolders": true,
+    "catppuccin-icons.monochrome": false,
+    "catppuccin-icons.associations.extensions": {},
+    "catppuccin-icons.associations.files": {},
+    "catppuccin-icons.associations.folders": {},
+    "catppuccin-icons.associations.languages": {},
+    // VSCodeVim //
+    "vim.changeWordIncludesWhitespace": false,
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.cursorStylePerMode.replace": "block-outline",
+    "vim.cursorStylePerMode.visual": "underline",
+    "vim.cursorStylePerMode.visualblock": "block-outline",
+    "vim.cursorStylePerMode.visualline": "block",
+    "vim.digraphs": {},
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-s>": false,
+        "<C-z>": false
+    },
+    "vim.overrideCopy": true,
+    "vim.disableExtension": false,
+    "vim.useSystemClipboard": true,
+    "vim.searchHighlightColor": "#cba6f7",
+    "vim.searchHighlightTextColor": "#11111b",
+    "vim.searchMatchColor": "#89dceb",
+    "vim.searchMatchTextColor": "#11111b",
+    "vim.substitutionColor": "#f9e2af",
+    "vim.substitutionTextColor": "#11111b",
+    "vim.startInInsertMode": false,
+    "vim.useCtrlKeys": true,
+    "vim.visualstar": true,
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.color": "#f2cdcd",
+    "vim.highlightedyank.textColor": "#11111b",
+    "vim.highlightedyank.duration": 1000,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "d"
+            ],
+            "commands": [
+                "editor.action.revealDefinition"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "t",
+                "n"
+            ],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        },
+    ],
+    "vim.autoindent": true,
+    "vim.gdefault": false,
+    "vim.hlsearch": true,
+    "vim.ignorecase": true,
+    "vim.incsearch": true,
+    "vim.inccommand": "replace",
+    "vim.joinspaces": true,
+    "vim.leader": " ",
+    "vim.maxmapdepth": 1000,
+    "vim.report": 2,
+    "vim.shell": "",
+    "vim.showcmd": true,
+    "vim.showmodename": true,
+    "vim.smartcase": true,
+    "vim.textwidth": 80,
+    "vim.timeout": 1000,
+    "vim.whichwrap": "b,s",
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.normal": [
+        "#89b4fa",
+        "#11111b"
+    ],
+    "vim.statusBarColors.insert": [
+        "#a6e3a1",
+        "#11111b"
+    ],
+    "vim.statusBarColors.visual": [
+        "#f38ba8",
+        "#11111b"
+    ],
+    "vim.statusBarColors.visualblock": [
+        "#f38ba8",
+        "#11111b"
+    ],
+    "vim.statusBarColors.visualline": [
+        "#f38ba8",
+        "#11111b"
+    ],
+    "vim.statusBarColors.replace": [
+        "#f9e2af",
+        "#11111b"
+    ],
+    "vim.statusBarColors.commandlineinprogress": [
+        "#cba6f7",
+        "#11111b"
+    ],
+    "vim.statusBarColors.searchinprogressmode": [
+        "#f2cdcd",
+        "#11111b"
+    ],
+    "vim.statusBarColors.easymotionmode": [
+        "#fab387",
+        "#11111b"
+    ],
+    "vim.statusBarColors.easymotioninputmode": [
+        "#fab387",
+        "#11111b"
+    ],
+    "vim.statusBarColors.surroundinputmode": [
+        "#eba0ac",
+        "#11111b"
+    ],
+    "vim.easymotion": true,
+    "vim.easymotionMarkerBackgroundColor": "#f9e2af",
+    "vim.easymotionMarkerFontWeight": "bold",
+    "vim.easymotionMarkerForegroundColorOneChar": "#11111b",
+    "vim.easymotionMarkerForegroundColorTwoCharFirst": "#11111b",
+    "vim.easymotionMarkerForegroundColorTwoCharSecond": "#11111b",
+    "vim.easymotionIncSearchForegroundColor": "#cba6f7",
+    "vim.easymotionDimBackground": true,
+    "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf;",
+    "vim.easymotionDimColor": "#45475a",
+    "vim.easymotionJumpToAnywhereRegex": "\\b[A-Za-z0-9]|[A-Za-z0-9]\\b|_.|#.|[a-z][A-Z]",
+    "vim.surround": true,
+    "vim.sneak": true,
+    "vim.sneakUseIgnorecaseAndSmartcase": true,
+    "vim.camelCaseMotion.enable": true,
+    "vim.autoSwitchInputMethod.enable": false,
+    "vim.replaceWithRegister": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#f38ba8",
+        "statusBar.noFolderBackground": "#f38ba8",
+        "statusBar.debuggingBackground": "#f38ba8",
+        "statusBar.foreground": "#11111b",
+        "statusBar.debuggingForeground": "#11111b"
+    },
+}
