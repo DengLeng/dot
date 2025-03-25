@@ -67,6 +67,7 @@
             "microsoft-powerpoint"
             "microsoft-word"
             "miniforge"
+            "neohtop"
             "spotify"
             "stats"
             "visual-studio-code"
@@ -81,6 +82,9 @@
 
           # nix
           nix.settings.experimental-features = "nix-command flakes";
+          nix.settings.auto-optimise-store = false;
+          nix.gc.automatic = true;
+          nix.gc.options = "--delete-older-than 7d";
 
           # system
           system.stateVersion = 6;
@@ -150,11 +154,13 @@
               )
             '';
           home.packages = with pkgs; [
+            btop
             bottom
             emacs
             fastfetch
             fzf
             go
+            htop
             lsd
             lua
             lua-language-server
