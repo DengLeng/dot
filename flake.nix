@@ -1,8 +1,7 @@
-# For macOS:
+# Steps:
 # 1. sh <(curl -L https://nixos.org/nix/install)
-# 2. cp macdot ~/
-# 3. nix run nix-darwin/master#darwin-rebuild --extra-experimental-features 'nix-command flakes' -- switch --flake ~/macdot#cya
-# 4. darwin-rebuild switch --flake ~/macdot#cya
+# 2. nix run nix-darwin/master#darwin-rebuild --extra-experimental-features 'nix-command flakes' -- switch --flake ~/dot#cya
+# 3. darwin-rebuild switch --flake ~/dot#cya
 
 # References:
 # 1. https://github.com/ryan4yin/nix-darwin-kickstarter
