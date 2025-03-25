@@ -52,6 +52,7 @@
             git
             mkalias
             wget
+            nil
             nixfmt-rfc-style
           ];
 
