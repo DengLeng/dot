@@ -175,6 +175,7 @@
             nerd-fonts.ubuntu-mono
             nerd-fonts.terminess-ttf
             nodejs_22
+            nnn
             p7zip
             ripgrep
             starship
