@@ -69,6 +69,7 @@
             "microsoft-word"
             "miniforge"
             "neohtop"
+            "raycast"
             "spotify"
             "stats"
             "visual-studio-code"
@@ -155,6 +156,7 @@
               )
             '';
           home.packages = with pkgs; [
+            bat
             btop
             bottom
             emacs
