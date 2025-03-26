@@ -1,52 +1,23 @@
 {
-    // BUILTIN //
+    // Built-in //
     "accessibility.dimUnfocused.enabled": true,
-    "accessibility.dimUnfocused.opacity": 0.75,
-    "editor.fontSize": 14,
+    "accessibility.dimUnfocused.opacity": 0.90,
+    "editor.fontSize": 15,
     "editor.guides.bracketPairs": true,
-    "editor.guides.bracketPairsHorizontal": true,
     "editor.guides.highlightActiveIndentation": true,
     "editor.lineNumbers": "relative",
-    "editor.renderWhitespace": "all",
+    "editor.renderWhitespace": "selection",
     "editor.minimap.enabled": false,
     "editor.tabSize": 2,
-    "editor.semanticHighlighting.enabled": true,
-    "editor.rulers": [
-        80
-    ],
     "window.zoomLevel": -0.5,
     "workbench.startupEditor": "none",
-    "workbench.panel.showLabels": false,
-    "terminal.integrated.minimumContrastRatio": 1,
-    "[python]": {
-        "editor.tabSize": 4
-    },
-    "[json]": {
-        "editor.tabSize": 4
-    },
-    "[jsonc]": {
-        "editor.tabSize": 4
-    },
     "extensions.experimental.affinity": {
         "vscodevim.vim": 1
     },
     // VSCodeVim //
-    "vim.changeWordIncludesWhitespace": false,
-    "vim.cursorStylePerMode.normal": "block",
-    "vim.cursorStylePerMode.insert": "line",
-    "vim.cursorStylePerMode.replace": "block-outline",
-    "vim.cursorStylePerMode.visual": "underline",
-    "vim.cursorStylePerMode.visualblock": "block-outline",
-    "vim.cursorStylePerMode.visualline": "block",
-    "vim.digraphs": {},
-    "vim.handleKeys": {
-        "<C-d>": true,
-        "<C-s>": false,
-        "<C-z>": false
-    },
     "vim.overrideCopy": true,
-    "vim.disableExtension": false,
     "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
     "vim.insertModeKeyBindings": [
         {
             "before": [
@@ -87,21 +58,4 @@
             ]
         }
     ],
-    "vim.autoindent": true,
-    "vim.gdefault": false,
-    "vim.hlsearch": true,
-    "vim.ignorecase": true,
-    "vim.incsearch": true,
-    "vim.inccommand": "replace",
-    "vim.joinspaces": true,
-    "vim.leader": " ",
-    "vim.maxmapdepth": 1000,
-    "vim.report": 2,
-    "vim.shell": "",
-    "vim.showcmd": true,
-    "vim.showmodename": true,
-    "vim.smartcase": true,
-    "vim.textwidth": 80,
-    "vim.timeout": 1000,
-    "vim.whichwrap": "b,s"
 }
