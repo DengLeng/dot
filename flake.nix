@@ -164,6 +164,7 @@
             fzf
             go
             htop
+            lazygit
             lsd
             lua
             lua-language-server
@@ -180,9 +181,12 @@
             nodejs_22
             nnn
             p7zip
+            R
+            rstudio
             ripgrep
             starship
             tmux
+            tldr
             unzip
             vim
             wezterm
