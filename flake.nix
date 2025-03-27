@@ -62,8 +62,12 @@
             "mas"
           ];
           homebrew.casks = [
-            "keka"
+            "aldente"
+            "firefox"
             "google-chrome"
+            "joplin"
+            "keka"
+            "microsoft-edge"
             "microsoft-excel"
             "microsoft-powerpoint"
             "microsoft-word"
@@ -159,6 +163,8 @@
             bat
             btop
             bottom
+            cargo
+            clang-tools
             emacs
             fastfetch
             fzf
@@ -178,12 +184,14 @@
             nerd-fonts.ubuntu
             nerd-fonts.ubuntu-mono
             nerd-fonts.terminess-ttf
+            nushell
             nodejs_22
             nnn
             p7zip
             R
             rstudio
             ripgrep
+            ripgrep-all
             starship
             tmux
             tldr
