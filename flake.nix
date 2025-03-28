@@ -10,7 +10,7 @@
 
 # Code:
 {
-  description = "Nix configuration";
+  description = "nix-darwin configuration";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin/master";
@@ -65,6 +65,7 @@
             "aldente"
             "firefox"
             "google-chrome"
+            "intellij-idea-ce"
             "joplin"
             "keka"
             "microsoft-edge"
@@ -174,6 +175,7 @@
             lsd
             lua
             lua-language-server
+            jdk23
             jq
             neovim
             nerd-fonts.fira-mono
@@ -194,6 +196,8 @@
             ripgrep-all
             starship
             tmux
+            texliveTeTeX
+            texstudio
             tldr
             unzip
             vim
