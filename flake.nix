@@ -65,6 +65,7 @@
             "aldente"
             "firefox"
             "google-chrome"
+            "hiddenbar"
             "intellij-idea-ce"
             "joplin"
             "keka"
