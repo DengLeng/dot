@@ -178,6 +178,7 @@
             jdk23
             jq
             neovim
+            nerd-fonts.blex-mono
             nerd-fonts.fira-mono
             nerd-fonts.hack
             nerd-fonts.victor-mono
@@ -186,6 +187,16 @@
             nerd-fonts.ubuntu
             nerd-fonts.ubuntu-mono
             nerd-fonts.terminess-ttf
+            nerd-fonts.noto
+            nerd-fonts.mplus
+            nerd-fonts.go-mono
+            nerd-fonts.zed-mono
+            nerd-fonts.mononoki
+            nerd-fonts.monaspace
+            nerd-fonts.meslo-lg
+            nerd-fonts.inconsolata
+            nerd-fonts.caskaydia-mono
+            nerd-fonts.fantasque-sans-mono
             nushell
             nodejs_22
             nnn
