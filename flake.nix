@@ -1,12 +1,12 @@
-# Steps:
-# 1. sh <(curl -L https://nixos.org/nix/install)
-# 2. nix run nix-darwin/master#darwin-rebuild --extra-experimental-features 'nix-command flakes' -- switch --flake ~/dot#cya
-# 3. darwin-rebuild switch --flake ~/dot#cya
-
 # References:
 # 1. https://github.com/ryan4yin/nix-darwin-kickstarter
 # 2. https://nixos-and-flakes.thiscute.world/
 # 3. https://davi.sh/blog/2024/02/nix-home-manager/
+
+# Bootstrap:
+# 1. sh <(curl -L https://nixos.org/nix/install)
+# 2. nix run nix-darwin/master#darwin-rebuild --extra-experimental-features 'nix-command flakes' -- switch --flake ~/dot#cya
+# 3. darwin-rebuild switch --flake ~/dot#cya
 
 # Code:
 {
@@ -58,8 +58,15 @@
 
           # homebrew
           homebrew.enable = true;
+          homebrew.brewPrefix = "/opt/homebrew/bin";
+          homebrew.global.brewfile = true;
+          homebrew.global.autoUpdate = false;
+          homebrew.taps = [
+            # "FelixKratz/formulae"
+            # "nikitabobko/tap"
+          ];
           homebrew.brews = [
-            "mas"
+            "m-cli"
           ];
           homebrew.casks = [
             "aldente"
@@ -76,14 +83,15 @@
             "miniforge"
             "neohtop"
             "raycast"
+            "sf-symbols"
             "spotify"
             "stats"
             "visual-studio-code"
           ];
-          homebrew.taps = [
-            # "nikitabobko/tap/aerospace"
-          ];
-          homebrew.masApps = { };
+          homebrew.masApps = {
+            # Xcode = 497799835;
+            # adguard-for-safari = 1440147259;
+          };
           homebrew.onActivation.cleanup = "none";
           homebrew.onActivation.autoUpdate = false;
           homebrew.onActivation.upgrade = false;
@@ -97,6 +105,19 @@
           # system
           system.stateVersion = 6;
           system.configurationRevision = self.rev or self.dirtyRev or null;
+          system.defaults.menuExtraClock.Show24Hour = true;
+          system.defaults.menuExtraClock.ShowAMPM = false;
+          system.defaults.menuExtraClock.ShowDayOfMonth = false;
+          system.defaults.menuExtraClock.ShowDayOfWeek = false;
+          system.defaults.menuExtraClock.ShowDate = 1;
+          system.defaults.menuExtraClock.ShowSeconds = false;
+          system.defaults.NSGlobalDomain.NSAutomaticCapitalizationEnabled = false;
+          system.defaults.NSGlobalDomain.NSAutomaticDashSubstitutionEnabled = false;
+          system.defaults.NSGlobalDomain.NSAutomaticPeriodSubstitutionEnabled = false;
+          system.defaults.NSGlobalDomain.NSAutomaticQuoteSubstitutionEnabled = false;
+          system.defaults.NSGlobalDomain.NSAutomaticSpellingCorrectionEnabled = false;
+          system.defaults.NSGlobalDomain.NSNavPanelExpandedStateForSaveMode = true;
+          system.defaults.NSGlobalDomain.NSNavPanelExpandedStateForSaveMode2 = true;
           system.defaults.dock.autohide = true;
           system.defaults.dock.show-recents = false;
           system.defaults.dock.persistent-apps = [
@@ -106,6 +127,7 @@
           system.defaults.finder.ShowPathbar = true;
           system.defaults.finder.ShowStatusBar = true;
           system.defaults.NSGlobalDomain.AppleInterfaceStyle = "Dark";
+          system.defaults.controlcenter.BatteryShowPercentage = true;
           system.activationScripts.extraActivation.text = ''
             softwareupdate --install-rosetta --agree-to-license
           '';
@@ -124,9 +146,9 @@
               find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
               while read -r src; do
                 app_name=$(basename "$src")
-                echo "copying $src" >&2
-                ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
-              done
+                  echo "copying $src" >&2
+                  ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
+                  done
             '';
           security.pam.services.sudo_local.touchIdAuth = true;
         };
@@ -155,10 +177,10 @@
               rm -rf "$toDir"
               mkdir "$toDir"
               (
-                cd "$fromDir"
-                for app in *.app; do
-                  /usr/bin/osacompile -o "$toDir/$app" -e 'do shell script "open '$fromDir/$app'"'
-                done
+               cd "$fromDir"
+               for app in *.app; do
+               /usr/bin/osacompile -o "$toDir/$app" -e 'do shell script "open '$fromDir/$app'"'
+               done
               )
             '';
           home.packages = with pkgs; [
@@ -167,9 +189,12 @@
             bottom
             cargo
             clang-tools
+            direnv
             emacs
             fastfetch
+            fd
             fzf
+            graphviz
             go
             htop
             lazygit
@@ -217,6 +242,7 @@
             xz
             yazi
             zip
+            zstd
           ];
           home.file.".config/aerospace/aerospace.toml".source = ./home/aerospace/aerospace.toml;
           home.file.".vim/vimrc".source = ./home/vim/vimrc;
@@ -234,6 +260,9 @@
           programs.starship.enable = true;
           programs.starship.settings.add_newline = false;
           programs.starship.settings.line_break.disabled = true;
+          programs.direnv.enable = true;
+          programs.direnv.nix-direnv.enable = true;
+          programs.direnv.enableZshIntegration = true;
         };
     in
     {
